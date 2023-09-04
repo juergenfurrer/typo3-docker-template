@@ -60,7 +60,7 @@ This is to avoid any port-conflicts with your host-system.
 
 ### APACHE_EXTERNAL_PORT
 
-Same as for the Database but für Apache, in case you have allready used port 80, you can change the external port here.
+Same as for the Database but für Apache, in case you have already used port 80, you can change the external port here.
 
 
 ## TS and SCSS

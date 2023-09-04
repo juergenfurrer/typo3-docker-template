@@ -10,10 +10,10 @@
         "close"
     ];
 
-    $('[data-toggle="tooltip"],[data-tooltip]').tooltip();
-    $('[data-toggle="popover"],[data-popover]').popover();
+    // $('[data-toggle="tooltip"],[data-tooltip]').tooltip();
+    // $('[data-toggle="popover"],[data-popover]').popover();
 
-    $(document).ready(function () {
+    $(function () {
         $('a.external, .leaflet-control-attribution a').attr('target', '_new');
     });
 }(jQuery));
