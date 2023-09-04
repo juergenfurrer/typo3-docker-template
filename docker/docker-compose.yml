@@ -32,4 +32,4 @@ services:
       - ./php-apache/conf.d/opcache.ini:/usr/local/etc/php/conf.d/docker-php-ext-opcache.ini
       - ./php-apache/conf.d/default.ini:/usr/local/etc/php/conf.d/default.ini
     ports:
-      - "80:80"
+      - "${APACHE_EXTERNAL_PORT}:80"
