@@ -40,3 +40,7 @@ typo3conf/ext/*
 !typo3conf/ext/customext
 !typo3conf/ext/jfnewt
 !typo3conf/sites/
+
+typo3conf/ext/customext/Resources/Public/Css/
+typo3conf/ext/customext/Resources/Public/Js/
+typo3conf/ext/customext/Resources/Public/vendor/
