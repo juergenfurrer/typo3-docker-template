@@ -14,7 +14,8 @@ You can find the .env file here:
 
 ### COMPOSE_PROJECT_NAME
 
-This will be used as the project name of all created containers
+This will be used as the project name of all created containers.
+
 This installation will generate two services:
 1. Database
 2. PHP/Apache
@@ -23,7 +24,8 @@ With the project-name, it will be nice organised in your docker-desktop (twisty)
 
 ### SITE_NAME
 
-This will be used as prefix for the container-names
+This will be used as prefix for the container-names.
+
 The containers will be named like this:
 
 ```
@@ -53,6 +55,7 @@ Type in the root password for the database, you will need this
 ### MARIADB_EXTERNAL_PORT
 
 In case you have a Mariadb/MySQL installation on your system, you can fill here the external port of the Database.
+
 This is to avoid any port-conflicts with your host-system.
 
 ### APACHE_EXTERNAL_PORT
@@ -64,7 +67,7 @@ Same as for the Database but für Apache, in case you have allready used port 80
 
 Open the terminal in ```./src/```
 
-Make shure you have installed the latest node-js on your system (and npm)
+Make sure you have installed the latest ```node-js``` on your system (and npm)
 
 Type:
 ```
@@ -79,10 +82,11 @@ After successfully install you can start the grunt-file by typing:
 grunt
 ```
 
-This will start the process witch will creates the css and js files from SCSS and TS.
+This will start the process which will create the css and js files based on the SCSS and TS provided in this package.
+
 It will also copy all the vendors-libs to the customerext public-folger.
 
-At the end, the process will start a watch for some files and will start the preprocess if needed
+At the end, the process will start a watch for some files and will start the preprocess if needed.
 
 Now you can start changing the scss/ts:
 ```
@@ -93,5 +97,5 @@ Now you can start changing the scss/ts:
 ./src/style.scss
 ```
 
-The TYPO3 FE will automatically reload the page in case the SCSS or the TS changed (in fact, it will reload in case the css or the js was changet)
+The TYPO3 frontend-page will automatically reload the page in case the SCSS or the TS changed (in fact, it will reload in case the css or the js was changet)
 
