@@ -75,6 +75,12 @@ module.exports = function (grunt) {
         src: "**",
         dest: my_extension + "Resources/Public/vendor/bootstrap/",
       },
+      popper: {
+        expand: true,
+        cwd: "node_modules/@popperjs/core/dist",
+        src: "**",
+        dest: my_extension + "Resources/Public/vendor/popper.js/",
+      },
       fontawesome: {
         expand: true,
         cwd: "node_modules/@fortawesome/fontawesome-free",
