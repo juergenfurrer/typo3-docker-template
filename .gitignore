@@ -23,8 +23,9 @@
 /typo3temp/
 
 **/node_modules
-src/.tscache
-docker/database/sql/
+/src/.tscache
+/docker/database/sql/
+/docker/.env
 
 # Enable some folders in fileadmin
 !fileadmin/
@@ -39,7 +40,6 @@ typo3conf/*
 typo3conf/ext/*
 !typo3conf/ext/customext
 !typo3conf/ext/jfnewt
-!typo3conf/sites/
 
 typo3conf/ext/customext/Resources/Public/Css/
 typo3conf/ext/customext/Resources/Public/Js/
