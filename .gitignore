@@ -21,3 +21,22 @@
 /index.php
 # Ignore temp directory.
 /typo3temp/
+
+**/node_modules
+src/.tscache
+docker/database/sql/
+
+# Enable some folders in fileadmin
+!fileadmin/
+fileadmin/*
+!fileadmin/dce
+!fileadmin/favicon
+
+# Enable the custom-ext
+!typo3conf/
+typo3conf/*
+!typo3conf/ext/
+typo3conf/ext/*
+!typo3conf/ext/customext
+!typo3conf/ext/jfnewt
+!typo3conf/sites/
