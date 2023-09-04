@@ -13,7 +13,7 @@ services:
       MYSQL_PASSWORD: n5ddzMNzl3sQ8PHf
       MYSQL_ROOT_PASSWORD: root
     ports:
-      - "3307:3306"
+      - "${MARIADB_EXTERNAL_PORT}:3306"
 
   php-apache:
     build:
