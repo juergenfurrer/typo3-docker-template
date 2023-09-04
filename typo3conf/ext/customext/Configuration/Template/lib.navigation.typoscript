@@ -1,0 +1,79 @@
+lib.navigation = COA
+lib.navigation {
+  10 = TEXT
+  10.value (
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-secondary">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+  )
+
+  20 = IMAGE
+  20.file = EXT:customext/Resources/Public/Images/brand.svg
+  20.altText = {$customext.siteTitle}
+  20.params = class="d-inline-block align-top"
+
+  30 = TEXT
+  30.value (
+                    <span class="h3">{$customext.siteTitle}</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+  )
+
+  40 = HMENU
+  40 {
+    1 = TMENU
+    1.expAll = 1
+    1.wrap = <ul class="navbar-nav mr-auto">|</ul>
+
+    1.NO = 1
+    1.NO.ATagParams = class="nav-link"
+    1.NO.wrapItemAndSub  = <li class="nav-item">|</li>
+
+    1.ACT = 1
+    1.ACT.ATagParams = class="nav-link"
+    1.ACT.wrapItemAndSub = <li class="nav-item active">|</li>
+  }
+
+  50 = FLUIDTEMPLATE
+  50 {
+    file = EXT:customext/Resources/Private/Templates/RightMenu.html
+    variables {
+      userName = COA_INT
+      userName {
+        stdWrap.htmlSpecialChars = 1
+        10 = TEXT
+        10.value = {TSFE:fe_user|user|gpsnose_loginname}
+        10.insertData = 1
+      }
+      isLoggedIn = TEXT
+      isLoggedIn.value = {TSFE:fe_user|user|gpsnose_loginname}
+      isLoggedIn.insertData = 1
+    }
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      10 {
+        special = directory
+        special.value = {$customext.menuProfileId}
+        as = profileNavigation
+      }
+
+      20 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+      20 {
+        languages = auto
+        as = languageNavigation
+      }
+    }
+  }
+
+  60 = TEXT
+  60.value (
+                </div>
+            </div>
+        </nav>
+    </header>
+  )
+}

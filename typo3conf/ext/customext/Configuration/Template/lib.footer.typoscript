@@ -1,0 +1,26 @@
+lib.footer = COA
+lib.footer {
+  10 = HMENU
+  10 {
+    special = directory
+    special.value = {$customext.menuFooterId}
+    1 = TMENU
+    1 {
+      wrap = |
+      NO.wrapItemAndSub = |
+      NO.linkWrap = |&nbsp;&#124;&nbsp; |*| |&nbsp;&#124;&nbsp; |*| | 
+      expAll = 1
+    }
+  }
+
+  stdWrap.dataWrap (
+    <footer class="footer mt-auto py-3 bg-light border-top">
+        <div class="container d-md-flex flex-md-row text-center text-md-left">
+            <div class="text-muted">Copyright &copy; {date:Y} {$customext.siteTitle}</div>
+            <div class="d-none d-md-block">&nbsp;&middot;&nbsp;</div>
+            <div class="text-muted">Webdesign by <a href="https://infonique.ch" class="external">infonique</a></div>
+            <div class="text-muted ml-md-auto">|</div>
+        </div>
+    </footer>
+  )
+}

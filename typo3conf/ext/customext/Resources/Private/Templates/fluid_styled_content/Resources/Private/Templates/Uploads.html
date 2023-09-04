@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <f:if condition="{files}">
+
+        <div class="list-group">
+            <f:for each="{files}" as="file" iteration="fileIterator">
+                <a href="{file.publicUrl}" {f:if(condition:data.target,then: ' target="{data.target}"' )}{f:if(condition: file.title, then: ' title="{file.title}"' )} class="list-group-item list-group-item-action external">
+                    <f:if condition="{data.uploads_type} == 1">
+                        <img src="{f:uri.resource(path: 'Icons/FileIcons/{file.extension}.gif', extensionName: 'frontend')}" alt="">
+                    </f:if>
+                    <f:if condition="{data.uploads_type} == 2">
+                        <f:if condition="{file.type} > 1">
+                            <f:if condition="{f:uri.image(src: 'file:{f:if(condition: file.originalFile, then: \'file:{file.originalFile.uid}\', else: \'file:{file.uid}\')}')} != '/'">
+                                <f:then>
+                                    <a href="{file.publicUrl}" {f:if(condition:data.target,then: ' target="{data.target}"' )}{f:if(condition: file.title, then: ' title="{file.title}"' )}>
+                                        <f:media file="{file}" width="150" alt="{file.properties.alternative}" />
+                                    </a>
+                                </f:then>
+                                <f:else>
+                                    <img src="{f:uri.resource(path: 'Icons/FileIcons/{file.extension}.gif', extensionName: 'frontend')}" alt="">
+                                </f:else>
+                            </f:if>
+                        </f:if>
+                    </f:if>
+
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="{f:if(condition:'{file.properties.description}', then: 'mb-1', else: 'mb-0')}"><i class="fas fa-file"></i> {f:if(condition: file.properties.title, then: file.properties.title, else: file.name) -> f:format.htmlspecialchars()}</h5>
+                        <f:if condition="{data.filelink_size}">
+                            <span><f:format.bytes value="{file.properties.size}" /></span>
+                        </f:if>
+                    </div>
+                    <f:if condition="{file.properties.description}">
+                        <f:if condition="{data.uploads_description}">
+                            <p class="mb-0">{file.properties.description}</p>
+                        </f:if>
+                    </f:if>
+                </a>
+            </f:for>
+        </div>
+    </f:if>
+
+</f:section>
+
+</html>

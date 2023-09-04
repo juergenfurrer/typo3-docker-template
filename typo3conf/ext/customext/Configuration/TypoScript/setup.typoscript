@@ -1,0 +1,6 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:customext/Configuration/Template/main.typoscript">
+
+plugin.tx_form.settings.yamlConfigurations {
+  100 = EXT:customext/Configuration/Yaml/CustomFormSetup.yaml
+}
+

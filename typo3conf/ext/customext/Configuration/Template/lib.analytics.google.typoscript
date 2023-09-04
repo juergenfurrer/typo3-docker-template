@@ -1,0 +1,13 @@
+[like("{$customext.analyticsKey}", "/.+/")]
+lib.analytics.google = TEXT
+lib.analytics.google.value (
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={$customext.analyticsKey}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{$customext.analyticsKey}');
+</script>
+)
+[END]

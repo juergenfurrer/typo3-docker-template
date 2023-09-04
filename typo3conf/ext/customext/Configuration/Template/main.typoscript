@@ -1,0 +1,104 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:customext/Configuration/Template/lib.navigation.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:customext/Configuration/Template/lib.content.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:customext/Configuration/Template/lib.footer.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:customext/Configuration/Template/lib.analytics.google.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:customext/Configuration/Template/lib.analytics.matomo.typoscript">
+
+lib.contentElement.settings.media.popup {
+  linkParams {
+    parameter.override.cObject = IMG_RESOURCE
+    parameter.override.cObject.file.import.data = TSFE:lastImageInfo|origFile
+    parameter.override.cObject.file.maxW = 2048
+    parameter.override.cObject.file.maxH = 1536
+    ATagParams.dataWrap = data-fancybox="fancybox-{file:current:uid_foreign}"
+  }
+  directImageLink = 1
+  JSwindow = 0
+  wrap >
+}
+
+
+config.admPanel = {$customext.admPanel}
+
+config.noPageTitle = 2
+config.disableImgBorderAttr = 1
+
+[{$customext.concatenate} == '1']
+config.concatenateCss = 1
+config.concatenateJs = 1
+[END]
+
+[{$customext.spamProtect} == '1']
+config.spamProtectEmailAddresses = 2
+config.spamProtectEmailAddresses_atSubst = (at)
+config.spamProtectEmailAddresses_lastDotSubst = (dot)
+[END]
+
+
+# page
+page = PAGE
+page {
+  config.htmlTag.attributes.class = h-100
+  bodyTag = <body class="d-flex flex-column h-100">
+
+  // config.headerComment = Your Header-comment here
+
+  10 < lib.navigation
+  20 < lib.content
+  30 < lib.footer
+  40 < lib.analytics.google
+
+  headerData {
+    10 = TEXT
+    10 {
+      field = title
+      noTrimWrap = |<title>{$customext.siteTitle}: |</title>|
+    }
+
+    20 = TEXT
+    20.value (
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="apple-touch-icon" sizes="180x180" href="/fileadmin/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/fileadmin/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/fileadmin/favicon/favicon-16x16.png">
+<link rel="manifest" href="/fileadmin/favicon/site.webmanifest">
+<link rel="mask-icon" href="/fileadmin/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/fileadmin/favicon/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/fileadmin/favicon/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+    )
+
+    30 < lib.analytics.matomo
+  }
+
+  includeCSS {
+    fontawesome = EXT:customext/Resources/Public/vendor/fontawesome-free/css/all{$customext.useMin}.css
+    fancybox = EXT:customext/Resources/Public/vendor/fancybox/jquery.fancybox{$customext.useMin}.css
+    aos = EXT:customext/Resources/Public/vendor/aos/aos.css
+    style = EXT:customext/Resources/Public/Css/style{$customext.useMin}.css
+  }
+
+  includeJSLibs {
+    jquery = EXT:customext/Resources/Public/vendor/jquery/jquery{$customext.useMin}.js
+  }
+
+  includeJSFooter {
+    bootstrap = EXT:customext/Resources/Public/vendor/bootstrap/js/bootstrap.bundle{$customext.useMin}.js
+    popper = EXT:customext/Resources/Public/vendor/popper.js/umd/popper{$customext.useMin}.js
+    easing = EXT:customext/Resources/Public/vendor/jquery-easing/jquery.easing{$customext.useMin}.js
+    fancybox = EXT:customext/Resources/Public/vendor/fancybox/jquery.fancybox{$customext.useMin}.js
+    aos = EXT:customext/Resources/Public/vendor/aos/aos.js
+    script = EXT:customext/Resources/Public/Js/script{$customext.useMin}.js
+  }
+}
+
+[{$customext.isDebug} == '1']
+page.includeJSFooter.livereload = http://localhost:35729/livereload.js
+page.includeJSFooter.livereload.excludeFromConcatenation = 1
+[END]
+
+[{$customext.showError} == '1']
+config.contentObjectExceptionHandler = 0
+[END]

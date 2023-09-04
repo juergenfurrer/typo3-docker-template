@@ -1,0 +1,14 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  20: 'EXT:customext/Resources/Private/Templates/form/Resources/Private/Frontend/Templates'
+                partialRootPaths:
+                  20: 'EXT:customext/Resources/Private/Templates/form/Resources/Private/Frontend/Partials/'
+                layoutRootPaths:
+                  20: 'EXT:customext/Resources/Private/Templates/form/Resources/Private/Frontend/Layouts/'

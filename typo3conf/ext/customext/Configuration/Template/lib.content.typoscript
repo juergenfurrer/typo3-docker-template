@@ -1,0 +1,25 @@
+lib.content = COA
+lib.content {
+
+    // Normal
+    10 < styles.content.get
+
+    stdWrap.wrap = <main class="flex-shrink-0">|</main>
+}
+
+tt_content.stdWrap.innerWrap.cObject = CASE
+tt_content.stdWrap.innerWrap.cObject {
+    key.field = layout
+
+    // Default
+    0 = TEXT
+    0.value = <div class="container"><div class="my-3">|</div></div>
+
+    // Full width
+    1 = TEXT
+    1.value = <div class="full-width"><div class="my-3">|</div></div>
+
+    // Full width and height
+    2 = TEXT
+    2.value = <div class="full-width">|</div>
+}
