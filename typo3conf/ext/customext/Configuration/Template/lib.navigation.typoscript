@@ -3,15 +3,15 @@ lib.navigation {
   10 = TEXT
   10.value (
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-secondary">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-secondary shadow">
             <div class="container">
                 <a class="navbar-brand" href="/">
   )
 
   20 = IMAGE
-  20.file = EXT:customext/Resources/Public/Images/brand.svg
+  20.file = EXT:customext/Resources/Public/Images/Logo.svg
   20.altText = {$customext.siteTitle}
-  20.params = class="d-inline-block align-top"
+  20.params = class="d-inline-block align-top rounded-circle"
 
   30 = TEXT
   30.value (
@@ -27,7 +27,7 @@ lib.navigation {
   40 {
     1 = TMENU
     1.expAll = 1
-    1.wrap = <ul class="navbar-nav mr-auto">|</ul>
+    1.wrap = <ul class="navbar-nav me-auto">|</ul>
 
     1.NO = 1
     1.NO.ATagParams = class="nav-link"
@@ -46,12 +46,15 @@ lib.navigation {
       userName {
         stdWrap.htmlSpecialChars = 1
         10 = TEXT
-        10.value = {TSFE:fe_user|user|gpsnose_loginname}
+        10.value = {TSFE:fe_user|user|username}
         10.insertData = 1
       }
       isLoggedIn = TEXT
-      isLoggedIn.value = {TSFE:fe_user|user|gpsnose_loginname}
+      isLoggedIn.value = {TSFE:fe_user|user|username}
       isLoggedIn.insertData = 1
+      loginPageId = TEXT
+      loginPageId.value = {$customext.loginId}
+      loginPageId.insertData = 1
     }
     dataProcessing {
       10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor

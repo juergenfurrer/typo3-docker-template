@@ -1,55 +1,67 @@
-<ul class="navbar-nav ml-auto">
-    <f:if condition="{f:count(subject: profileNavigation)} > 0">
-        <f:if condition="{isLoggedIn}">
-            <f:then>
-                <!-- Show Profile informations -->
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <f:format.raw>{userName}</f:format.raw>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <f:for each="{profileNavigation}" as="item">
-                            <a href="{item.link}" class="dropdown-item{f:if(condition:'{item.current}', then:' active')}">{item.title}</a>
-                        </f:for>
-                    </div>
-                </li>
-            </f:then>
-            <f:else>
-                <!-- Not logged in... -->
-                <f:for each="{profileNavigation}" as="item">
-                    <li class="nav-item">
-                        <a href="{item.link}" class="nav-link{f:if(condition:'{item.current}', then:' active')}">{item.title}</a>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" data-namespace-typo3-fluid="true"
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:fluid="http://typo3.org/ns/TYPO3Fluid/Fluid/ViewHelpers">
+<fluid:spaceless>
+    <ul class="navbar-nav ms-auto">
+        <f:if condition="{f:count(subject: profileNavigation)} > 0">
+            <f:if condition="{isLoggedIn}">
+                <f:then>
+                    <!-- Show Profile informations -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <f:format.raw>{userName}</f:format.raw>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <f:for each="{profileNavigation}" as="item">
+                                <a href="{item.link}" class="dropdown-item{f:if(condition:'{item.current}', then:' active')}">{item.title}</a>
+                            </f:for>
+                            <f:if condition="{loginPageId}">
+                                <f:link.page pageUid="{loginPageId}" class="dropdown-item" additionalParams="{logintype: 'logout'}">Logout</f:link.page>
+                            </f:if>
+                        </div>
                     </li>
-                </f:for>
-            </f:else>
+                </f:then>
+                <f:else>
+                    <!-- Not logged in... -->
+                    <f:for each="{profileNavigation}" as="item">
+                        <li class="nav-item">
+                            <a href="{item.link}" class="nav-link{f:if(condition:'{item.current}', then:' active')}">{item.title}</a>
+                        </li>
+                    </f:for>
+                </f:else>
+            </f:if>
         </f:if>
-    </f:if>
 
-    <f:if condition="{f:count(subject: languageNavigation)} > 1">
-        <f:if condition="{f:count(subject: languageNavigation)} > 2">
-            <f:then>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        Sprache
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <f:for each="{languageNavigation}" as="item">
-                            <a {f:if(condition: item.available, then: ' href="{item.link}"' )} hreflang="{item.hreflang}" title="{item.navigationTitle}" class="dropdown-item{f:if(condition: item.active, then: ' active')}{f:if(condition: item.available, else: ' disabled')}">
+        <f:if condition="{f:count(subject: languageNavigation)} > 1">
+            <f:if condition="{f:count(subject: languageNavigation)} > 2">
+                <f:then>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Language
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <f:for each="{languageNavigation}" as="item">
+                                <a {f:if(condition: item.available, then: ' href="{item.link}"' )} hreflang="{item.hreflang}"
+                                    title="{item.navigationTitle}"
+                                    class="dropdown-item{f:if(condition: item.active, then: ' active')}{f:if(condition: item.available, else: ' disabled')}">
+                                    <f:format.case>{item.twoLetterIsoCode}</f:format.case>
+                                </a>
+                            </f:for>
+                        </div>
+                    </li>
+                </f:then>
+                <f:else>
+                    <f:for each="{languageNavigation}" as="item">
+                        <li class="nav-item{f:if(condition: item.active, then: ' active')}">
+                            <a {f:if(condition: item.available, then: ' href="{item.link}"' )} hreflang="{item.hreflang}" class="nav-link{f:if(condition: item.available, else: ' disabled')}"
+                                title="{item.navigationTitle}">
                                 <f:format.case>{item.twoLetterIsoCode}</f:format.case>
                             </a>
-                        </f:for>
-                    </div>
-                </li>
-            </f:then>
-            <f:else>
-                <f:for each="{languageNavigation}" as="item">
-                    <li class="nav-item{f:if(condition: item.active, then: ' active')}{f:if(condition: item.available, else: ' disabled')}">
-                        <a {f:if(condition: item.available, then: ' href="{item.link}"' )} hreflang="{item.hreflang}" class="nav-link" title="{item.navigationTitle}">
-                            <f:format.case>{item.twoLetterIsoCode}</f:format.case>
-                        </a>
-                    </li>
-                </f:for>
-            </f:else>
+                        </li>
+                    </f:for>
+                </f:else>
+            </f:if>
         </f:if>
-    </f:if>
-</ul>
+    </ul>
+</fluid:spaceless>
+</html>

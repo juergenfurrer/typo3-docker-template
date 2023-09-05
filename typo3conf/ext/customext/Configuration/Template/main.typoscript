@@ -74,23 +74,23 @@ page {
   }
 
   includeCSS {
-    fontawesome = EXT:customext/Resources/Public/vendor/fontawesome-free/css/all{$customext.useMin}.css
-    fancybox = EXT:customext/Resources/Public/vendor/fancybox/jquery.fancybox{$customext.useMin}.css
+    fontawesome = EXT:customext/Resources/Public/vendor/fontawesome-free/css/all{$customext.includeSuffix}.css
+    fancybox = EXT:customext/Resources/Public/vendor/fancybox/jquery.fancybox{$customext.includeSuffix}.css
     aos = EXT:customext/Resources/Public/vendor/aos/aos.css
-    style = EXT:customext/Resources/Public/Css/style{$customext.useMin}.css
+    style = EXT:customext/Resources/Public/Css/style{$customext.includeSuffix}.css
   }
 
   includeJSLibs {
-    jquery = EXT:customext/Resources/Public/vendor/jquery/jquery{$customext.useMin}.js
+    jquery = EXT:customext/Resources/Public/vendor/jquery/jquery{$customext.includeSuffix}.js
   }
 
   includeJSFooter {
-    bootstrap = EXT:customext/Resources/Public/vendor/bootstrap/js/bootstrap.bundle{$customext.useMin}.js
-    popper = EXT:customext/Resources/Public/vendor/popper.js/umd/popper{$customext.useMin}.js
-    easing = EXT:customext/Resources/Public/vendor/jquery-easing/jquery.easing{$customext.useMin}.js
-    fancybox = EXT:customext/Resources/Public/vendor/fancybox/jquery.fancybox{$customext.useMin}.js
+    bootstrap = EXT:customext/Resources/Public/vendor/bootstrap/js/bootstrap.bundle{$customext.includeSuffix}.js
+    popper = EXT:customext/Resources/Public/vendor/popper.js/umd/popper{$customext.includeSuffix}.js
+    easing = EXT:customext/Resources/Public/vendor/jquery-easing/jquery.easing{$customext.includeSuffix}.js
+    fancybox = EXT:customext/Resources/Public/vendor/fancybox/jquery.fancybox{$customext.includeSuffix}.js
     aos = EXT:customext/Resources/Public/vendor/aos/aos.js
-    script = EXT:customext/Resources/Public/Js/script{$customext.useMin}.js
+    script = EXT:customext/Resources/Public/Js/script{$customext.includeSuffix}.js
   }
 }
 

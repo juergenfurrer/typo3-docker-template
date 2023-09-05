@@ -25,12 +25,14 @@ customext.menuProfileId =
 # cat=plugin.customext/080; type=integer; label=Menu-Footer ID
 customext.menuFooterId =
 
-# cat=plugin.customext/090; type=boolean; label=Activate Admin-Panel
+# cat=plugin.customext/090; type=integer; label=Login-Page ID
+customext.loginId =
+
+# cat=plugin.customext/100; type=boolean; label=Activate Admin-Panel
 customext.admPanel =
 
-# cat=plugin.customext/100; type=string; label=Will add this to the css/js where "min" is available
-customext.useMin = .min
-
+# cat=plugin.customext/110; type=string; label=Will add this to the css/js where "min" is available
+customext.includeSuffix = .min
 
 styles {
   templates {
@@ -59,3 +61,4 @@ plugin {
     }
   }
 }
+

@@ -19,7 +19,7 @@ lib.footer {
             <div class="text-muted">Copyright &copy; {date:Y} {$customext.siteTitle}</div>
             <div class="d-none d-md-block">&nbsp;&middot;&nbsp;</div>
             <div class="text-muted">Webdesign by <a href="https://infonique.ch" class="external">infonique</a></div>
-            <div class="text-muted ml-md-auto">|</div>
+            <div class="text-muted ms-md-auto">|</div>
         </div>
     </footer>
   )
