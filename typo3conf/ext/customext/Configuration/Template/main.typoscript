@@ -10,7 +10,7 @@ lib.contentElement.settings.media.popup {
     parameter.override.cObject.file.import.data = TSFE:lastImageInfo|origFile
     parameter.override.cObject.file.maxW = 2048
     parameter.override.cObject.file.maxH = 1536
-    ATagParams.dataWrap = data-fancybox="fancybox-{file:current:uid_foreign}"
+    ATagParams.dataWrap = class="venobox" data-gall="venobox-{file:current:uid_foreign}"
   }
   directImageLink = 1
   JSwindow = 0
@@ -75,20 +75,15 @@ page {
 
   includeCSS {
     fontawesome = EXT:customext/Resources/Public/vendor/fontawesome-free/css/all{$customext.includeSuffix}.css
-    fancybox = EXT:customext/Resources/Public/vendor/fancybox/jquery.fancybox{$customext.includeSuffix}.css
+    venobox = EXT:customext/Resources/Public/vendor/venobox/venobox{$customext.includeSuffix}.css
     aos = EXT:customext/Resources/Public/vendor/aos/aos.css
     style = EXT:customext/Resources/Public/Css/style{$customext.includeSuffix}.css
-  }
-
-  includeJSLibs {
-    jquery = EXT:customext/Resources/Public/vendor/jquery/jquery{$customext.includeSuffix}.js
   }
 
   includeJSFooter {
     bootstrap = EXT:customext/Resources/Public/vendor/bootstrap/js/bootstrap.bundle{$customext.includeSuffix}.js
     popper = EXT:customext/Resources/Public/vendor/popper.js/umd/popper{$customext.includeSuffix}.js
-    easing = EXT:customext/Resources/Public/vendor/jquery-easing/jquery.easing{$customext.includeSuffix}.js
-    fancybox = EXT:customext/Resources/Public/vendor/fancybox/jquery.fancybox{$customext.includeSuffix}.js
+    venobox = EXT:customext/Resources/Public/vendor/venobox/venobox{$customext.includeSuffix}.js
     aos = EXT:customext/Resources/Public/vendor/aos/aos.js
     script = EXT:customext/Resources/Public/Js/script{$customext.includeSuffix}.js
   }

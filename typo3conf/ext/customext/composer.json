@@ -1,10 +1,10 @@
 {
-    "name": "infonique/customext",
+    "name": "swisscode/customext",
     "type": "typo3-cms-extension",
     "description": "Custom extension",
     "authors": [
         {
-            "name": "Juergen Furrer",
+            "name": "SwissCode",
             "role": "Developer"
         }
     ],
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Infonique\\Customext\\": "Classes"
+            "Swisscode\\Customext\\": "Classes"
         }
     },
     "replace": {

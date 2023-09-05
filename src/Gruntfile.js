@@ -57,18 +57,6 @@ module.exports = function (grunt) {
     },
 
     copy: {
-      jquery: {
-        expand: true,
-        cwd: "node_modules/jquery/dist",
-        src: "**",
-        dest: my_extension + "Resources/Public/vendor/jquery/",
-      },
-      jquery_easing: {
-        expand: true,
-        cwd: "node_modules/jquery.easing",
-        src: "*.js",
-        dest: my_extension + "Resources/Public/vendor/jquery-easing/",
-      },
       bootstrap: {
         expand: true,
         cwd: "node_modules/bootstrap/dist",
@@ -87,11 +75,11 @@ module.exports = function (grunt) {
         src: ["css/**", "js/**", "sprites/**", "webfonts/**"],
         dest: my_extension + "Resources/Public/vendor/fontawesome-free/",
       },
-      fancybox: {
+      venobox: {
         expand: true,
-        cwd: "node_modules/@fancyapps/fancybox/dist",
+        cwd: "node_modules/venobox/dist",
         src: "**",
-        dest: my_extension + "Resources/Public/vendor/fancybox/",
+        dest: my_extension + "Resources/Public/vendor/venobox/",
       },
       aos: {
         expand: true,
@@ -120,9 +108,6 @@ module.exports = function (grunt) {
       },
       dist: {
         files: [my_extension + "Resources/Public/**/*"],
-      },
-      html: {
-        files: ["../html/*"],
       },
       css: {
         files: ["./*.scss"],

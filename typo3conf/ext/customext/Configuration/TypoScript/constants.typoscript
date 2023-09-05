@@ -16,7 +16,7 @@ customext.analyticsKey =
 # cat=plugin.customext/055; type=string; label=Analytics Key (Matomo)
 customext.matomoKey =
 
-# cat=plugin.customext/060; type=string; label=Name if this Site
+# cat=plugin.customext/060; type=string; label=Name of this Site
 customext.siteTitle =
 
 # cat=plugin.customext/070; type=integer; label=Menu-Profile ID
