@@ -2,7 +2,6 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:customext/Configuration/Template/lib.content.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:customext/Configuration/Template/lib.footer.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:customext/Configuration/Template/lib.analytics.google.typoscript">
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:customext/Configuration/Template/lib.analytics.matomo.typoscript">
 
 lib.contentElement.settings.media.popup {
   linkParams {
@@ -69,8 +68,6 @@ page {
 <meta name="msapplication-config" content="/fileadmin/favicon/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
     )
-
-    30 < lib.analytics.matomo
   }
 
   includeCSS {

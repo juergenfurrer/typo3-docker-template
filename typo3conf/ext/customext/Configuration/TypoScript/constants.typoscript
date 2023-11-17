@@ -13,9 +13,6 @@ customext.spamProtect = 0
 # cat=plugin.customext/050; type=string; label=Analytics Key (Google)
 customext.analyticsKey =
 
-# cat=plugin.customext/055; type=string; label=Analytics Key (Matomo)
-customext.matomoKey =
-
 # cat=plugin.customext/060; type=string; label=Name of this Site
 customext.siteTitle =
 
